@@ -75,13 +75,14 @@
     {% endif %}
 
     {% if output_filename %}
-        <h2>Imagen Generada:</h2>
-        <img src="{{ url_for('get_output') }}" alt="Imagen Generada" style="max-width: 300px; max-height: 300px;">
-        <br>
-        <form class="form-signin" method="post" enctype="multipart/form-data" action="/upload">
-        <a href="{{ url_for('get_output') }}" class="h3 mb-1 btn btn-primary btn-block" type="submit" role="button" download>Descargar Imagen</a>
-        </form>
-    {% endif %}
+    <h2>Imagen Generada:</h2>
+    <img src="{{ url_for('get_output', filename=output_filename) }}" alt="Imagen Generada" style="max-width: 300px; max-height: 300px;">
+    <br>
+    <form class="form-signin" method="post" enctype="multipart/form-data" action="/upload">
+        <a href="{{ url_for('get_output', filename=output_filename) }}" class="h3 mb-1 btn btn-primary btn-block" type="submit" role="button" download>Descargar Imagen</a>
+    </form>
+{% endif %}
+
 
     <!-- Bootstrap JS and jQuery -->
     <script src="//code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
